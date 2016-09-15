@@ -15,6 +15,7 @@ namespace PortfolioManager
         public MainUI()
         {
             InitializeComponent();
+            DataManager.WebData.GetData("TATACHEM");
         }
     }
 }
