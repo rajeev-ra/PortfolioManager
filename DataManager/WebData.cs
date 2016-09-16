@@ -10,7 +10,7 @@ namespace DataManager
 {
     public class WebData
     {
-        public static void GetData(string symbol)
+        public static LiveData GetLiveData(string symbol)
         {
             //xMH7BiBu6s24LHCizug3
             //https://www.quandl.com/api/v3/datasets/NSE/ABB.json?api_key=xMH7BiBu6s24LHCizug3
@@ -32,12 +32,13 @@ namespace DataManager
             int end = responseString.IndexOf("</div>", start);
 
             responseString = responseString.Substring(start, end - start);
-            readString(responseString);
+            return readString(responseString);
         }
 
-        private static void readString(string str)
+        private static LiveData readString(string str)
         {
-            SortedList<string, string> data = new SortedList<string, string>();
+            LiveData d = new LiveData();
+            //SortedList<string, string> data = new SortedList<string, string>();
             int start = str.IndexOf(','), end = 0;
             string key = "", val = "";
             while(-1 != start)
@@ -52,8 +53,10 @@ namespace DataManager
                 end = str.IndexOf('\"', start);
                 val = str.Substring(start, end - start);
                 start = str.IndexOf(',', end);
-                data.Add(key, val);
+                //data.Add(key, val);
+                d.AddData(key, val);
             }
+            return d;
         }
     }
 }
