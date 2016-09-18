@@ -22,13 +22,10 @@ namespace PortfolioManager
             lastButton = this.buttonA;
             AddCompany('A');
         }
-        public void AddCompany(char c)
+        private void AddCompany(char c)
         {
             this.flowLayoutPanel.Controls.Clear();
-            foreach (Control control in companyList[c])
-            {
-                this.flowLayoutPanel.Controls.Add(control);
-            }
+            this.flowLayoutPanel.Controls.AddRange(companyList[c].ToArray());
             CompanyListItemControl item = new CompanyListItemControl("","","");
             item.BackColor = System.Drawing.SystemColors.ControlDark;
             item.BorderStyle = BorderStyle.None;
@@ -39,12 +36,12 @@ namespace PortfolioManager
             this.flowLayoutPanel.Controls.Add(item);
         }
 
-        public void CreateCompanyList()
+        private void CreateCompanyList()
         {
             char nextChar = 'A';
             char currentChar = '#';
 
-            String dataPath = Directory.GetCurrentDirectory() + "\\NSC.txt";
+            string dataPath = Directory.GetCurrentDirectory() + "\\NSC.txt";
             using (StreamReader sr = new StreamReader(dataPath))
             {
                 List<Control> controlList = new List<Control>();
@@ -67,7 +64,6 @@ namespace PortfolioManager
                     isin = line.Substring(start, end - start).Trim();
 
                     CompanyListItemControl item = new CompanyListItemControl(company, symbol, isin);
-                    item.toolTip.SetToolTip(item, company);
 
                     if (line.ElementAt(0) != nextChar)
                     {
@@ -96,30 +92,7 @@ namespace PortfolioManager
                 lastButton = b;
             }
         }
-
-        private void searchBox_TextChanged(object sender, EventArgs e)
-        {
-            /*
-            string search = this.searchBox.Text;
-            search = search.ToUpper();
-            if(search.Length == 0)
-            {
-                foreach(Control c in this.flowLayoutPanel.Controls)
-                {
-                    c.Visible = true;
-                }
-                return;
-            }
-            Button b = (Button)this.Controls["button" + search.ElementAt(0)];
-            if (b != lastButton)
-            {
-                this.flowLayoutPanel.Controls.Clear();
-                AddCompany(b.Text.ElementAt(0));
-                lastButton = b;
-            }
-            */
-        }
-
+        
         private void searchBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -150,12 +123,9 @@ namespace PortfolioManager
                     if (n > 100)
                         break;
                 }
-
+                
                 this.flowLayoutPanel.Controls.Clear();
-                foreach (Control control in searchResult)
-                {
-                    this.flowLayoutPanel.Controls.Add(control);
-                }
+                this.flowLayoutPanel.Controls.AddRange(searchResult.ToArray());
                 CompanyListItemControl item = new CompanyListItemControl("", "", "");
                 item.BackColor = System.Drawing.SystemColors.ControlDark;
                 item.BorderStyle = BorderStyle.None;

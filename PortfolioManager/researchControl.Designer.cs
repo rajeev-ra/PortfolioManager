@@ -30,6 +30,7 @@
         {
             this.headingLabel = new System.Windows.Forms.Label();
             this.companyListControl = new PortfolioManager.CompanyListControl();
+            this.companyDetailsTabControl = new PortfolioManager.CompanyDetailsTabControl();
             this.SuspendLayout();
             // 
             // headingLabel
@@ -55,11 +56,25 @@
             this.companyListControl.Size = new System.Drawing.Size(252, 502);
             this.companyListControl.TabIndex = 2;
             // 
+            // companyDetailsTabControl
+            // 
+            this.companyDetailsTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.companyDetailsTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.companyDetailsTabControl.Location = new System.Drawing.Point(296, 64);
+            this.companyDetailsTabControl.Margin = new System.Windows.Forms.Padding(0);
+            this.companyDetailsTabControl.Name = "companyDetailsTabControl";
+            this.companyDetailsTabControl.SelectedIndex = 0;
+            this.companyDetailsTabControl.Size = new System.Drawing.Size(647, 502);
+            this.companyDetailsTabControl.TabIndex = 3;
+            // 
             // researchControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Controls.Add(this.companyDetailsTabControl);
             this.Controls.Add(this.companyListControl);
             this.Controls.Add(this.headingLabel);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -74,5 +89,6 @@
 
         private System.Windows.Forms.Label headingLabel;
         private CompanyListControl companyListControl;
+        private CompanyDetailsTabControl companyDetailsTabControl;
     }
 }

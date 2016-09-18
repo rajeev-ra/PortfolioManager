@@ -18,6 +18,13 @@ namespace PortfolioManager
             this.company.Text = company;
             this.symbol.Text = symbol;
             this.isin.Text = isin;
+            if(company.Length > 0)
+            {
+                this.toolTip.SetToolTip(this, company);
+                this.toolTip.SetToolTip(this.company, company);
+                this.toolTip.SetToolTip(this.symbol, company);
+                this.toolTip.SetToolTip(this.isin, company);
+            }
         }
 
         public bool Contains(string search)
@@ -35,6 +42,11 @@ namespace PortfolioManager
                 return true;
             }
             return false;
+        }
+
+        private void CompanyListItemControl_Click(object sender, EventArgs e)
+        {
+            researchControl.AddTab(company.Text, symbol.Text);
         }
     }
 }

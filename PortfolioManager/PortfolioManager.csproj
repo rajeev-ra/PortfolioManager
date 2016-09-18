@@ -33,6 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SharpGL">
+      <HintPath>..\thirdparty\SharpGL.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpGL.SceneGraph">
+      <HintPath>..\thirdparty\SharpGL.SceneGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpGL.Serialization">
+      <HintPath>..\thirdparty\SharpGL.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpGL.WinForms">
+      <HintPath>..\thirdparty\SharpGL.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,6 +63,18 @@
     </Compile>
     <Compile Include="AccountControl.Designer.cs">
       <DependentUpon>AccountControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyDetailsTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CompanyDetailsTabControl.Designer.cs">
+      <DependentUpon>CompanyDetailsTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyDetailsTabItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CompanyDetailsTabItem.Designer.cs">
+      <DependentUpon>CompanyDetailsTabItem.cs</DependentUpon>
     </Compile>
     <Compile Include="CompanyListControl.cs">
       <SubType>UserControl</SubType>
@@ -80,6 +104,12 @@
     </Compile>
     <EmbeddedResource Include="AccountControl.resx">
       <DependentUpon>AccountControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyDetailsTabControl.resx">
+      <DependentUpon>CompanyDetailsTabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyDetailsTabItem.resx">
+      <DependentUpon>CompanyDetailsTabItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CompanyListControl.resx">
       <DependentUpon>CompanyListControl.cs</DependentUpon>

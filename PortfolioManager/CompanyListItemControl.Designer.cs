@@ -45,6 +45,7 @@
             this.company.Size = new System.Drawing.Size(64, 25);
             this.company.TabIndex = 0;
             this.company.Text = "label1";
+            this.company.Click += new System.EventHandler(this.CompanyListItemControl_Click);
             // 
             // symbol
             // 
@@ -55,6 +56,7 @@
             this.symbol.Size = new System.Drawing.Size(46, 17);
             this.symbol.TabIndex = 1;
             this.symbol.Text = "label2";
+            this.symbol.Click += new System.EventHandler(this.CompanyListItemControl_Click);
             // 
             // isin
             // 
@@ -65,6 +67,7 @@
             this.isin.Size = new System.Drawing.Size(46, 17);
             this.isin.TabIndex = 2;
             this.isin.Text = "label3";
+            this.isin.Click += new System.EventHandler(this.CompanyListItemControl_Click);
             // 
             // CompanyListItemControl
             // 
@@ -78,6 +81,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "CompanyListItemControl";
             this.Size = new System.Drawing.Size(252, 58);
+            this.Click += new System.EventHandler(this.CompanyListItemControl_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
