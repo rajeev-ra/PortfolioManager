@@ -8,7 +8,9 @@ namespace DataManager
 {
     public class LiveData
     {
-        public string stockName = "";
+        public string companyName = "";
+        public string symbol = "";
+        public string isinCode = "";
         public float lastPrice = 0.0f;
         public float dayHigh = 0.0f;
         public float dayLow = 0.0f;
@@ -46,7 +48,15 @@ namespace DataManager
             switch(key)
             {
                 case "companyName":
-                    stockName = val;
+                    companyName = val;
+                    break;
+
+                case "symbol":
+                    symbol = val;
+                    break;
+
+                case "isinCode":
+                    isinCode = val;
                     break;
 
                 case "lastPrice":

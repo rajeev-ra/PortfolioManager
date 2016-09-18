@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataManager;
@@ -15,6 +16,7 @@ namespace PortfolioManager
     {
         private Control currentControl = null;
         private Button dissabledShortcut = null;
+        private Point controlLocation = new Point(50, 0);
         public MainUI()
         {
             InitializeComponent();
@@ -23,6 +25,8 @@ namespace PortfolioManager
             account_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             currentControl = accountControl;
             dissabledShortcut = account_button;
+            accountControl.Location = controlLocation;
+            this.Controls.Add(accountControl);
         }
 
         private void account_button_Click(object sender, EventArgs e)
@@ -34,6 +38,11 @@ namespace PortfolioManager
             account_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Remove(currentControl);
             currentControl = accountControl;
+            Size s = this.Size;
+            s.Height -= 38;
+            s.Width -= 65;
+            currentControl.Size = s;
+            currentControl.Location = controlLocation;
             this.Controls.Add(accountControl);
         }
 
@@ -46,7 +55,7 @@ namespace PortfolioManager
             assessment_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Remove(currentControl);
             currentControl = null;
-            this.Controls.Add(null);
+            this.Controls.Add(currentControl);
         }
 
         private void earnings_button_Click(object sender, EventArgs e)
@@ -58,7 +67,7 @@ namespace PortfolioManager
             earnings_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Remove(currentControl);
             currentControl = null;
-            this.Controls.Add(null);
+            this.Controls.Add(currentControl);
         }
 
         private void settings_button_Click(object sender, EventArgs e)
@@ -70,19 +79,48 @@ namespace PortfolioManager
             settings_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Remove(currentControl);
             currentControl = null;
-            this.Controls.Add(null);
+            this.Controls.Add(currentControl);
         }
 
-        private void update_button_Click(object sender, EventArgs e)
+        private void research_Click(object sender, EventArgs e)
         {
             dissabledShortcut.Enabled = true;
             dissabledShortcut.BackColor = System.Drawing.SystemColors.WindowText;
-            dissabledShortcut = update_button;
-            update_button.Enabled = false;
-            update_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dissabledShortcut = research_button;
+            dissabledShortcut.Enabled = false;
+            dissabledShortcut.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Controls.Remove(currentControl);
+            currentControl = researchControl;
+            Size s = this.Size;
+            s.Height -= 38;
+            s.Width -= 65;
+            currentControl.Size = s;
+            currentControl.Location = controlLocation;
+            this.Controls.Add(currentControl);
+        }
+
+        private void watchlist_Click(object sender, EventArgs e)
+        {
+            dissabledShortcut.Enabled = true;
+            dissabledShortcut.BackColor = System.Drawing.SystemColors.WindowText;
+            dissabledShortcut = watchlist_button;
+            dissabledShortcut.Enabled = false;
+            dissabledShortcut.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Remove(currentControl);
             currentControl = null;
-            this.Controls.Add(null);
+            this.Controls.Add(currentControl);
+        }
+
+        private void developer_Click(object sender, EventArgs e)
+        {
+            dissabledShortcut.Enabled = true;
+            dissabledShortcut.BackColor = System.Drawing.SystemColors.WindowText;
+            dissabledShortcut = developer_button;
+            dissabledShortcut.Enabled = false;
+            dissabledShortcut.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Controls.Remove(currentControl);
+            currentControl = null;
+            this.Controls.Add(currentControl);
         }
     }
 }
