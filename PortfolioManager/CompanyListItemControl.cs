@@ -46,7 +46,7 @@ namespace PortfolioManager
 
         private void CompanyListItemControl_Click(object sender, EventArgs e)
         {
-            researchControl.AddTab(company.Text, symbol.Text);
+            researchControl.AddTab(company.Text, symbol.Text, isin.Text);
         }
     }
 }

@@ -19,17 +19,27 @@ namespace PortfolioManager
             InitializeComponent();
             _this = this;
 
-            CompanyDetailsTabItem page = new CompanyDetailsTabItem();
-            page.Text = "Nifty";
-            companyDetailsTabControl.TabPages.Add(page);
+            //CompanyDetailsTabItem page = new CompanyDetailsTabItem("company","","");
+            //companyDetailsTabControl.TabPages.Add(page);
         }
 
-        public static void AddTab(string company, string symbol)
+        public static void AddTab(string company, string symbol, string isin)
         {
-            CompanyDetailsTabItem page = new CompanyDetailsTabItem();
-            page.Text = company;
-            _this.companyDetailsTabControl.TabPages.Add(page);
-            _this.companyDetailsTabControl.SelectTab(page);
+            if(_this.companyDetailsTabControl.TabPages.ContainsKey(company))
+            {
+                _this.companyDetailsTabControl.SelectTab(company);
+            }
+            else
+            {
+                CompanyDetailsTabItem page = new CompanyDetailsTabItem(company, symbol, isin);
+                _this.companyDetailsTabControl.TabPages.Add(page);
+                _this.companyDetailsTabControl.SelectTab(page);
+            }
+        }
+
+        public static void RemoveTab(TabPage tab)
+        {
+            _this.companyDetailsTabControl.TabPages.Remove(tab);
         }
     }
 }

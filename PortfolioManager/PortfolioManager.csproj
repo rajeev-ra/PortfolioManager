@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SharpGL">
       <HintPath>..\thirdparty\SharpGL.dll</HintPath>
     </Reference>
@@ -88,6 +92,12 @@
     <Compile Include="CompanyListItemControl.Designer.cs">
       <DependentUpon>CompanyListItemControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="LiveDataViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LiveDataViewControl.Designer.cs">
+      <DependentUpon>LiveDataViewControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +127,9 @@
     <EmbeddedResource Include="CompanyListItemControl.resx">
       <DependentUpon>CompanyListItemControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LiveDataViewControl.resx">
+      <DependentUpon>LiveDataViewControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainUI.resx">
       <DependentUpon>MainUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +146,7 @@
     <EmbeddedResource Include="researchControl.resx">
       <DependentUpon>researchControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

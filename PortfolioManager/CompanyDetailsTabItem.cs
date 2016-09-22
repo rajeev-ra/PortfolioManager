@@ -14,9 +14,20 @@ namespace PortfolioManager
 {
     public partial class CompanyDetailsTabItem : TabPage
     {
-        public CompanyDetailsTabItem()
+        private string _symbol = "";
+        public CompanyDetailsTabItem(string company, string symbol, string isin)
         {
             InitializeComponent();
+            this.liveDataHeader.SetData(company, symbol, isin);
+            this.Text = company;
+            this.Name = company;
+            this._symbol = symbol;
+        }
+        
+        private void CloseButton_Click(object sender, System.EventArgs e)
+        {
+            DataManager.WebData.RemoveCallBack(_symbol, this.liveDataHeader.UpdateLive);
+            researchControl.RemoveTab(this);
         }
     }
 }

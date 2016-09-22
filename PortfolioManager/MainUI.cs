@@ -17,9 +17,11 @@ namespace PortfolioManager
         private Control currentControl = null;
         private Button dissabledShortcut = null;
         private Point controlLocation = new Point(50, 0);
+        private System.Threading.Thread liveFeed = new System.Threading.Thread(new System.Threading.ThreadStart(DataManager.WebData.StartFetch));
         public MainUI()
         {
             InitializeComponent();
+            this.FormClosing += MainUI_FormClosing;
             //LiveData data = WebData.GetLiveData("TATACHEM");
             account_button.Enabled = false;
             account_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -27,6 +29,12 @@ namespace PortfolioManager
             dissabledShortcut = account_button;
             accountControl.Location = controlLocation;
             this.Controls.Add(accountControl);
+            liveFeed.Start();
+        }
+
+        private void MainUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            liveFeed.Abort();
         }
 
         private void account_button_Click(object sender, EventArgs e)

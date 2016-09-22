@@ -5,11 +5,56 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.IO;
+using System.Threading;
 
 namespace DataManager
 {
     public class WebData
     {
+        private static SortedList<string, SortedSet<Func<LiveData, int>>> callbackData = new SortedList<string, SortedSet<Func<LiveData, int>>>();
+
+        public static void AddCallback(string symbol, Func<LiveData, int> func)
+        {
+            if(callbackData.ContainsKey(symbol))
+            {
+                callbackData[symbol].Add(func);
+            }
+            else
+            {
+                SortedSet<Func<LiveData, int>> funcSet = new SortedSet<Func<LiveData, int>>();
+                funcSet.Add(func);
+                callbackData.Add(symbol, funcSet);
+            }
+        }
+
+        public static void RemoveCallBack(string symbol, Func<LiveData, int> func)
+        {
+            if(callbackData.ContainsKey(symbol))
+            {
+                //callbackData[symbol].Remove(func);
+            }
+        }
+
+
+        public static void StartFetch()
+        {
+            while(true)
+            {
+                try
+                {
+                    foreach (var s in callbackData)
+                    {
+                        LiveData d = GetLiveData(s.Key);
+                        foreach (var f in s.Value)
+                        {
+                            f(d);
+                        }
+                    }
+                }
+                catch { }
+            }
+        }
+
         public static LiveData GetLiveData(string symbol)
         {
             //xMH7BiBu6s24LHCizug3

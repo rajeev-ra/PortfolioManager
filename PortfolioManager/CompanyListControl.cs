@@ -18,10 +18,18 @@ namespace PortfolioManager
         public CompanyListControl()
         {
             InitializeComponent();
+            this.MouseEnter += CompanyListControl_MouseEnter;
+            this.flowLayoutPanel.MouseEnter += CompanyListControl_MouseEnter;
             CreateCompanyList();
             lastButton = this.buttonA;
             AddCompany('A');
         }
+
+        private void CompanyListControl_MouseEnter(object sender, EventArgs e)
+        {
+            this.flowLayoutPanel.Focus();
+        }
+
         private void AddCompany(char c)
         {
             this.flowLayoutPanel.Controls.Clear();
@@ -64,6 +72,7 @@ namespace PortfolioManager
                     isin = line.Substring(start, end - start).Trim();
 
                     CompanyListItemControl item = new CompanyListItemControl(company, symbol, isin);
+                    item.MouseEnter += CompanyListControl_MouseEnter;
 
                     if (line.ElementAt(0) != nextChar)
                     {
