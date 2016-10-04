@@ -1,0 +1,57 @@
+/live_market/dynaContent/live_watch/stock_watch/niftyStockWatch.json			51
+/live_market/dynaContent/live_watch/stock_watch/juniorNiftyStockWatch.json		50
+/live_market/dynaContent/live_watch/stock_watch/niftyMidcap50StockWatch.json		50
+/live_market/dynaContent/live_watch/stock_watch/cnxAutoStockWatch.json			16
+/live_market/dynaContent/live_watch/stock_watch/bankNiftyStockWatch.json		12
+/live_market/dynaContent/live_watch/stock_watch/cnxEnergyStockWatch.json		10
+/live_market/dynaContent/live_watch/stock_watch/cnxFinanceStockWatch.json		15
+/live_market/dynaContent/live_watch/stock_watch/cnxFMCGStockWatch.json			15
+/live_market/dynaContent/live_watch/stock_watch/cnxitStockWatch.json			10
+/live_market/dynaContent/live_watch/stock_watch/cnxMediaStockWatch.json			15
+/live_market/dynaContent/live_watch/stock_watch/cnxMetalStockWatch.json			15
+/live_market/dynaContent/live_watch/stock_watch/cnxPharmaStockWatch.json		
+/live_market/dynaContent/live_watch/stock_watch/cnxPSUStockWatch.json			
+/live_market/dynaContent/live_watch/stock_watch/cnxRealtyStockWatch.json		
+/live_market/dynaContent/live_watch/stock_watch/niftyPvtBankStockWatch.json		
+/live_market/dynaContent/live_watch/stock_watch/cnxCommoditiesStockWatch.json		
+/live_market/dynaContent/live_watch/stock_watch/cnxConsumptionStockWatch.json		
+/live_market/dynaContent/live_watch/stock_watch/cpseStockWatch.json			
+/live_market/dynaContent/live_watch/stock_watch/cnxInfraStockWatch.json			
+/live_market/dynaContent/live_watch/stock_watch/cnxMNCStockWatch.json			
+/live_market/dynaContent/live_watch/stock_watch/ni15StockWatch.json			
+/live_market/dynaContent/live_watch/stock_watch/cnxPSEStockWatch.json			
+/live_market/dynaContent/live_watch/stock_watch/cnxServiceStockWatch.json		
+/live_market/dynaContent/live_watch/stock_watch/nseliquidStockWatch.json		
+/live_market/dynaContent/live_watch/stock_watch/niftyMidcapLiq15StockWatch.json		
+/live_market/dynaContent/live_watch/stock_watch/cnxDividendOpptStockWatch.json		
+/live_market/dynaContent/live_watch/stock_watch/nv20StockWatch.json			
+/live_market/dynaContent/live_watch/stock_watch/niftyQuality30StockWatch.json		
+/live_market/dynaContent/live_watch/stock_watch/foSecStockWatch.json			
+/live_market/dynaContent/live_watch/stock_watch/etfStockWatch.json			
+/live_market/dynaContent/live_watch/stock_watch/goldEtfStockWatch.json			
+/live_market/dynaContent/live_watch/stock_watch/nifty50EtfStockWatch.json		
+/live_market/dynaContent/live_watch/stock_watch/iLStockWatch.json			
+/live_market/dynaContent/live_watch/stock_watch/cbmSecListStockWatch.json	
+
+
+
+
+symbol	NMDC
+open	103.30
+high	106.75	
+low	102.90	
+ltP	105.25	
+ptsC	2.10	
+per	2.04	
+trdVol	35.39	
+trdVolM	3.54	
+ntP	37.26	
+mVal	0.37	
+wkhi	116.70	
+wklo	75.15	
+wkhicm_adj	196.00	
+wklocm_adj	123.10	
+xDt	22-SEP-2016	
+cAct	ANNUAL GENERAL MEETING	
+yPC	7.12	
+mPC	-3.44	

@@ -22,6 +22,7 @@ namespace PortfolioManager
         {
             InitializeComponent();
             this.FormClosing += MainUI_FormClosing;
+            WebData.UpdateData();
             //LiveData data = WebData.GetLiveData("TATACHEM");
             account_button.Enabled = false;
             account_button.BackColor = System.Drawing.SystemColors.ControlDarkDark;

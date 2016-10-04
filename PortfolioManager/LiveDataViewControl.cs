@@ -30,10 +30,12 @@ namespace PortfolioManager
 
         public int UpdateLive(DataManager.LiveData d)
         {
+            /*
             SetVal(this.latestVal, d.lastPrice.ToString());
             SetVal(this.lowVal, d.dayLow.ToString());
             SetVal(this.highVal, d.dayHigh.ToString());
             SetVal(this.openVal, d.openPrice.ToString());
+            */
             return 0;
         }
 
